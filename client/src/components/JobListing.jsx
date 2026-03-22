@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/App.context'
 import { assets, JobCategories, JobLocations } from '../assets/assets'
+import JobCard from './JobCard'
 
 function JobListing() {
 
-    const {isSearched,searchFilter, setSearchFilter} = useContext(AppContext)
+    const {isSearched,searchFilter, setSearchFilter ,jobs} = useContext(AppContext)
 
      // Clear title function
     const handleClearTitle = () => {
@@ -85,7 +86,9 @@ function JobListing() {
             <h3 className='font-medium text-3xl py-2' id='job-list'>Latest Jobs</h3>
             <p className='mb-8'>Get your desired job from top company</p>
             <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>
-
+                {jobs.map((job , index)=>(
+                    <JobCard key={index} job={job} />
+                ))}
             </div>
         </section>
 
