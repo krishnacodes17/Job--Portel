@@ -20,8 +20,8 @@ function Navbar() {
             >
               Applied Jobs
             </Link>
-            <span className="text-gray-400">|</span>
-            <span className="text-gray-700">
+            <span className="text-gray-400 font-bold">|</span>
+            <span className="text-gray-700 max-sm:hidden">
               Hi, {user?.firstName} {user?.lastName}
             </span>
             <UserButton afterSignOutUrl="/" />
